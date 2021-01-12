@@ -1,3 +1,12 @@
+<?php 
+error_reporting(E_ALL ^ E_WARNING);
+$db=mysqli_connect('localhost','root','') or die("could not connect to database");
+
+if(isset($_POST['s'])){
+	header('location:status.php');
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -44,6 +53,25 @@
 		padding: 0.55em 0.55em 0.55em 0;
 		display: inline-block;
 	}
+	button a{
+		float: right;
+		color: black;
+		font-family: "times new roman",serif;
+		font-weight: bold;
+		font-size: 1.5em;
+		color: white;
+	}
+    button{
+		float: right;
+		margin-top:1.3em;
+		margin-right: 2em;
+		background-color: black;
+	}
+	button a:hover{
+		background-color: white;
+		color: black;
+		text-decoration: none;
+	}
 
 </style>
 <body>
@@ -51,14 +79,15 @@
 	<div class="xyz">
 	<h2 style="text-align: center; font-family: 'times new roman',serif; font-weight: bolder; font-variant: small-caps;  color: #580000; text-shadow: 4px 2px white; text-decoration: overline; font-size: 2.5em;">Track Your Parcel</h2>
 </div>
-<form action="track.php" method="post">
+<form action="status.php?a=<?php echo $id;?>" method="get">
 	        <div class="row">
 			<div class="col-25"><label for="trackid">Tracking ID:</label></div>
 			<div class="col-75"><input type="text" name="trackid" required="" placeholder="Tracking ID.."></div></div>
 			<div class="row">
-			<button class="btn btn-danger" style="font-size: 1.3em;margin-left: 45%;">Track</button>
+			<button class="btn btn-danger" name="s" style="font-size: 1.3em;margin-left: 45%;">Track</button>
 	
 </form>
 
 </body>
+
 </html>

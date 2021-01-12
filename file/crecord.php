@@ -14,13 +14,13 @@ $query=mysqli_query($db,$sql);
 </head>
 <style type="text/css">
 	body{
-		background-color: #97c1ea;
-	    background-size:  100% 130%;
+		background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.5)), url(../img/ppp.jpg);
+	    background-size:  100% 100%;
 	    background-attachment: fixed;
 		background-repeat: no-repeat;
 	}
 	@media only screen and (min-width: 700px){
-	 a h1{
+	 .heading h1{
 		font-family: "lucida handwriting";
 		font-weight: 900;
 		font-size: 3em;
@@ -34,7 +34,7 @@ $query=mysqli_query($db,$sql);
     }
 
 	}
-	a h1{
+	.heading h1{
 
 		font-family: "lucida handwriting";
 		font-weight: 900;
@@ -108,10 +108,10 @@ $query=mysqli_query($db,$sql);
 </style>
 <body>
 	<button ><a href="manager.php"><i class="fa fa-sign-out"></i>LOGOUT</a></button>
-	 <a href="X.php" target="_blank"><h1><img src="../img/logo.png" height="80px" width="100px">XPress Delivery...</h1></a>
+	  <div class="heading"><h1><img src="../img/logo.png" height="80px" width="100px">XPress Delivery...</h1></div>
 	
 	<div class="container">
-		<table align="center" border="1px" style="width: 1000px; line-height: 30px; border: 3px solid black; ">
+		<table align="center" border="1px" style="width: 1000px; line-height: 30px; border: 3px solid black; background-color: white; ">
 			<tr>
 				<th colspan="7" style="height: 70px;" ><h2>Customer Record</h2></th>
 			</tr>

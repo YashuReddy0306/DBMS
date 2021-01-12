@@ -9,8 +9,8 @@
 </head>
 <style type="text/css">
 	body{
-		background-color: #97c1ea;
-	    background-size:  100% 130%;
+		background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.5)), url(../img/ppp.jpg);
+	    background-size:  100% 100%;
 	    background-attachment: fixed;
 		background-repeat: no-repeat;
 	}

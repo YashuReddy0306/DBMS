@@ -43,7 +43,7 @@ $result=mysqli_fetch_array($query);
 		font-variant: small-caps;
 	}
 	@media only screen and (min-width: 700px){
-	 a h1{
+	 .heading h1{
 		font-family: "lucida handwriting";
 		font-weight: 900;
 		font-size: 3em;
@@ -57,7 +57,7 @@ $result=mysqli_fetch_array($query);
     }
 
 	}
-	a h1{
+	.heading h1{
 
 		font-family: "lucida handwriting";
 		font-weight: 900;
@@ -118,7 +118,7 @@ $result=mysqli_fetch_array($query);
 </style>
 <body>
 	<button ><a href="customer.php"><i class="fa fa-sign-out"></i>LOGOUT</a></button>
-	 <a href="X.php" target="_blank"><h1><img src="../img/logo.png" height="80px" width="100px">XPress Delivery...</h1></a>
+	 <div class="heading"><h1><img src="../img/logo.png" height="80px" width="100px">XPress Delivery...</h1></div>
 <div class="container" style="float: left; margin-top: 2em;">
 	<p style="font-weight: bolder; font-family:'times new roman'; font-size: 3.7em;">Welcome!!!  <?php echo $result['name']; ?></p>
 
@@ -126,8 +126,8 @@ $result=mysqli_fetch_array($query);
 			<ul  style="list-style: none;">
 				
 			<li><a href="ship.php?a=<?php echo $result['userID'];?>">Ship Parcel</a></li>
-			<li><a href="">Shippment History</a></li>
-			<li><a href="">Suggestions</a></li>
+			<li><a href="history.php?a=<?php echo $result['userID'];?>">Shippment History</a></li>
+			<li><a href="suggestion.php?a=<?php echo $result['userID'];?>">Suggestions</a></li>
 		</ul>
 			
 		</div>
