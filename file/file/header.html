@@ -1,0 +1,119 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<div class="navbar">
+ 	<div class="dropdown" style="float: right;">
+ 		<button class="dropbtn">LOGIN<i class="fa fa-caret-down"></i></button>
+ 		<div class="dropdown-content">
+ 			<a href="manager.php"> MANAGER </a>
+ 	        <a href="customer.php"> CUSTOMER </a>
+ 		</div>
+ 	</div>
+ 	<a href="track.php" class="active">TRACKING</a>
+ 	<a href="X.php" class="active" >HOME</a>
+ </div>
+ 
+ <a href="X.php" target="_blank">
+ 	<h1><img src="../img/logo.png" height="80px" width="100px">XPress Delivery...</h1>
+ 	</a>
+
+ <style type="text/css">
+ 	
+ 	@media only screen and (min-width: 700px){
+	 a h1{
+		font-family: "lucida handwriting";
+		font-weight: 900;
+		font-size: 3em;
+		color:whitesmoke;
+		padding: 0.2% 0.4% 0.2% 3%;
+		float: left;
+		margin: 0;
+		display: inline-block;
+		background-image: linear-gradient(to right,rgba(112,128,144,1),rgba(112,128,144,0));
+		text-align: left;
+    }
+
+	}
+	a h1{
+
+		font-family: "lucida handwriting";
+		font-weight: 900;
+		text-shadow: 4px 2px #000000;
+		font-size: 3em;
+		display: inline-block;
+		color:whitesmoke;
+		padding: 0.2% 0.4% 0.2% 3%;
+	    margin: 0;
+		background-image: linear-gradient(to right,rgba(112,128,144,1),rgba(112,128,144,0));
+		float: left;
+		
+	}
+	a{
+		text-decoration: none;
+	}
+    a h1:hover{
+		font-size: 2.95em;
+	}
+    .navbar a:hover{
+		font-size: 1.45em;
+	}
+	.dropdown{
+		position: relative;
+		float: right;
+		display: inline-block;
+		margin-left: 1em; 
+	}
+    .dropdown .dropbtn{
+		font-size: 1.5em;
+		font-family: "times new roman",times,serif;
+		font-weight: 900;
+		padding: 0.1em;
+		margin-top: 0.4em;
+		background: #d3d3d3;
+		border-style: outset;
+		border: none;
+	}
+	.navbar a{
+
+		padding: 0.6em;
+		font-size: 1.5em;
+		font-weight: 900;
+		font-family: "times new roman",times,serif;
+        float: right;
+		border-radius: 0.6em;
+		color: black;
+		text-decoration: none;
+		padding-left: 1em;
+
+	}
+	.navbar{
+	    
+		text-align: center;
+		display: inline-block;
+		margin-left: 12em;
+		margin-left: 20em;
+		
+	}
+	.dropdown-content{
+		display: none;
+		position: absolute;
+		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		z-index: 1;
+		border: solid;
+	}
+	.dropdown:hover .dropdown-content{
+		display: block;
+
+	}
+	.dropdown-content a{
+		display: block;
+	}
+	.dropdown-content a:hover{
+		background: #d3d3d3;
+	}
+	.active:hover{
+		text-decoration: line-through;
+
+	}
+
+ </style>
