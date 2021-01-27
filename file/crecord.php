@@ -1,5 +1,6 @@
 <?php
-$db=mysqli_connect("localhost","root","","onlinecourier") or die("could not connect to database");
+error_reporting(E_ALL ^ E_NOTICE);
+$db=mysqli_connect("localhost","root","rashmikeshari123","onlinecourier") or die("could not connect to database");
 
 $sql="select * from clogin";
 $query=mysqli_query($db,$sql);
@@ -11,6 +12,9 @@ $query=mysqli_query($db,$sql);
 	<link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <style type="text/css">
 	body{
@@ -53,11 +57,11 @@ $query=mysqli_query($db,$sql);
 		}
 		th h2{
 			font-size: 2.5em;
-			color: #580000; text-shadow: 4px 2px white;
+			color:blackblack; text-shadow: 4px 2px white;
 			font-variant: small-caps;
 			font-family: "times new roman",serif;
 			font-weight: bold;
-			text-decoration: underline;
+			
 			text-align: center;
 
 		}
@@ -111,17 +115,17 @@ $query=mysqli_query($db,$sql);
 	  <div class="heading"><h1><img src="../img/logo.png" height="80px" width="100px">XPress Delivery...</h1></div>
 	
 	<div class="container">
-		<table align="center" border="1px" style="width: 1000px; line-height: 30px; border: 3px solid black; background-color: white; ">
+		<table class="table table-striped" align="center" border="1px" style="width: 1000px; line-height: 30px;  background-color: #d3d3d3; ">
 			<tr>
 				<th colspan="7" style="height: 70px;" ><h2>Customer Record</h2></th>
 			</tr>
 			<tr>
-				<th style="font-size: 1.7em; color: #580000; text-shadow: 4px 2px white; text-align: center;">S.no</th>
-				<th style="font-size: 1.7em; color: #580000; text-shadow: 4px 2px white; text-align: center;">UserID</th>
-				<th style="font-size: 1.7em; color: #580000; text-shadow: 4px 2px white; text-align: center;">Name</th>
-				<th style="font-size: 1.7em; color: #580000; text-shadow: 4px 2px white; text-align: center;">Email</th>
-                <th style="font-size: 1.7em; color: #580000; text-shadow: 4px 2px white; text-align: center;">Phone</th>
-                <th colspan="2" style="font-size: 1.7em; color: #580000; text-shadow: 4px 2px white; text-align: center;">Edit</th>
+				<th style="font-size: 1.7em; color: black; text-shadow: 4px 2px white; text-align: center;">S.no</th>
+				<th style="font-size: 1.7em; color: black; text-shadow: 4px 2px white; text-align: center;">UserID</th>
+				<th style="font-size: 1.7em; color: black; text-shadow: 4px 2px white; text-align: center;">Name</th>
+				<th style="font-size: 1.7em; color: black; text-shadow: 4px 2px white; text-align: center;">Email</th>
+                <th style="font-size: 1.7em; color: black; text-shadow: 4px 2px white; text-align: center;">Phone</th>
+                <th colspan="2" style="font-size: 1.7em; color: black; text-shadow: 4px 2px white; text-align: center;">Edit</th>
 
 			</tr>
 			<?php

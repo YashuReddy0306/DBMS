@@ -1,3 +1,6 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <div class="navbar">
  	<div class="dropdown" style="float: right;">
  		<button class="dropbtn">LOGIN<i class="fa fa-caret-down"></i></button>
@@ -6,11 +9,13 @@
  	        <a href="customer.php"> CUSTOMER </a>
  		</div>
  	</div>
- 	<a href="track.php">TRACKING</a>
+ 	<a href="track.php" class="active">TRACKING</a>
  	<a href="X.php" class="active" >HOME</a>
  </div>
  
- <a href="X.php" target="_blank"><h1><img src="../img/logo.png" height="80px" width="100px">XPress Delivery...</h1></a>
+ <a href="X.php" target="_blank">
+ 	<h1><img src="../img/logo.png" height="80px" width="100px">XPress Delivery...</h1>
+ 	</a>
 
  <style type="text/css">
  	
@@ -19,7 +24,7 @@
 		font-family: "lucida handwriting";
 		font-weight: 900;
 		font-size: 3em;
-		color:white;
+		color:whitesmoke;
 		padding: 0.2% 0.4% 0.2% 3%;
 		float: left;
 		margin: 0;
@@ -36,7 +41,7 @@
 		text-shadow: 4px 2px #000000;
 		font-size: 3em;
 		display: inline-block;
-		color:#002A53;
+		color:whitesmoke;
 		padding: 0.2% 0.4% 0.2% 3%;
 	    margin: 0;
 		background-image: linear-gradient(to right,rgba(112,128,144,1),rgba(112,128,144,0));
@@ -47,11 +52,10 @@
 		text-decoration: none;
 	}
     a h1:hover{
-		color: white;
-		font-size: 2.8em;
+		font-size: 2.95em;
 	}
     .navbar a:hover{
-		font-size: 1.3em;
+		font-size: 1.45em;
 	}
 	.dropdown{
 		position: relative;
@@ -87,6 +91,7 @@
 		text-align: center;
 		display: inline-block;
 		margin-left: 12em;
+		margin-left: 20em;
 		
 	}
 	.dropdown-content{
@@ -105,6 +110,10 @@
 	}
 	.dropdown-content a:hover{
 		background: #d3d3d3;
+	}
+	.active:hover{
+		text-decoration: line-through;
+
 	}
 
  </style>

@@ -1,6 +1,6 @@
 <?php 
-error_reporting(E_ALL ^ E_WARNING);
-$db=mysqli_connect('localhost','root','') or die("could not connect to database");
+error_reporting(E_ALL ^ E_NOTICE);
+$db=mysqli_connect('localhost','root','rashmikeshari123') or die("could not connect to database");
 
 if(isset($_POST['s'])){
 	header('location:status.php');
@@ -14,10 +14,13 @@ if(isset($_POST['s'])){
 	<link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <style type="text/css">
 	body{
-		background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.5)), url(../img/ppp.jpg);
+		background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.8)), url(../img/ppp.jpg);
 	    background-size:  100% 100%;
 	    background-attachment: fixed;
 		background-repeat: no-repeat;
@@ -30,11 +33,12 @@ if(isset($_POST['s'])){
 		float: left;
 		width: 25%;
 		margin-top: 6px;
-		font-weight: bold;
-		font-size: 1.2em;
+		font-weight: bolder;
+		font-size: 1.4em;
 		text-align: right;
 		padding-right: 3em;
 		font-family: "times new roman",serif;
+		color: black;
 	}
 	.col-75{
 		float: left;
@@ -53,25 +57,7 @@ if(isset($_POST['s'])){
 		padding: 0.55em 0.55em 0.55em 0;
 		display: inline-block;
 	}
-	button a{
-		float: right;
-		color: black;
-		font-family: "times new roman",serif;
-		font-weight: bold;
-		font-size: 1.5em;
-		color: white;
-	}
-    button{
-		float: right;
-		margin-top:1.3em;
-		margin-right: 2em;
-		background-color: black;
-	}
-	button a:hover{
-		background-color: white;
-		color: black;
-		text-decoration: none;
-	}
+	
 
 </style>
 <body>

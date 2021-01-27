@@ -1,9 +1,9 @@
 
 <?php
-error_reporting(E_ALL ^ E_WARNING);
+error_reporting(E_ALL ^ E_NOTICE);
 $errors=array();
 $incorrect="";
-$con=mysqli_connect("localhost","root","") or die("could not connect to database");
+$con=mysqli_connect("localhost","root","rashmikeshari123") or die("could not connect to database");
 
 mysqli_select_db($con,'onlinecourier');
 
@@ -45,10 +45,13 @@ else {
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <style type="text/css">
 	body{
-		background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.5)), url(../img/ppp.jpg);
+		background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.8)), url(../img/ppp.jpg);
 	    background-size:  100% 100%;
 	    background-attachment: fixed;
 		background-repeat: no-repeat;
@@ -62,6 +65,7 @@ else {
 		text-align: right;
 		padding-right: 3em;
 		font-family: "times new roman",serif;
+		color: black;
 	}
 	.col-75{
 		float: left;
@@ -124,8 +128,8 @@ else {
 <body>
 	<?php include "header.html" ?>
 	<div class="xyz">
-	<h2 style="text-align: center; font-family: 'times new roman',serif; font-weight: bolder; ">MANAGER</h2>
-	<h3 style="text-align: center; font-family: 'times new roman',serif; font-weight: bold;">Login</h3>
+	<h2 style="text-align: center; font-family: 'times new roman',serif; font-weight: bolder; color: black; ">MANAGER</h2>
+	<h3 style="text-align: center; font-family: 'times new roman',serif; font-weight: bold; color: black; ">Login</h3>
 	<div class="container">
 		<p class="incorrect" style="text-align: center; color: red; font-weight: bold;"><?php echo $incorrect; ?></p>
 		<form action="manager.php" method="post">

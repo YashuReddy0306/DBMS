@@ -1,6 +1,6 @@
 <?php
-error_reporting(E_ALL ^ E_WARNING);
-$db=mysqli_connect("localhost","root","","onlinecourier") or die("could not connect to database");
+error_reporting(E_ALL ^ E_NOTICE);
+$db=mysqli_connect("localhost","root","rashmikeshari123","onlinecourier") or die("could not connect to database");
 $tid=$_GET['trackid'];
 
 $sql="select * from track where trackID='$tid'";
@@ -15,6 +15,9 @@ $result=mysqli_fetch_array($query);
 	<link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script
   src="https://code.jquery.com/jquery-3.5.1.min.js">
   integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="

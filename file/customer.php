@@ -1,8 +1,8 @@
 <?php 
-error_reporting(E_ALL ^ E_WARNING);
+error_reporting(E_ALL ^ E_NOTICE);
 $errors1=array();
 $incorrect="";
-$db=mysqli_connect('localhost','root','') or die("could not connect to database");
+$db=mysqli_connect('localhost','root','rashmikeshari123') or die("could not connect to database");
 
 mysqli_select_db($db,'onlinecourier');
 
@@ -24,12 +24,15 @@ $sql="select * from clogin where email='$email' and password='$password' ";
 
 
 $result1=mysqli_query($db,$sql);
+$row=mysqli_fetch_array($result1);
+$a=$row['name'];
+$b=$row['userID'];
 if(count($errors1)==0){
 
     if(mysqli_num_rows($result1)) {
 
 		
-		header("location:clogin.php");
+		header("location:clogin.php?a=$a&b=$b");
 		
 	}
 	else {
@@ -47,10 +50,13 @@ if(count($errors1)==0){
 	<link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <style type="text/css">
 	body{
-		background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.5)), url(../img/ppp.jpg);
+		background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.8)), url(../img/ppp.jpg);
 	    background-size:  100% 100%;
 	    background-attachment: fixed;
 		background-repeat: no-repeat;
@@ -64,6 +70,7 @@ if(count($errors1)==0){
 		text-align: right;
 		padding-right: 3em;
 		font-family: "times new roman",serif;
+		color: black;
 	}
 	.col-75{
 		float: left;
@@ -129,13 +136,13 @@ if(count($errors1)==0){
 <body>
 	<?php include "header.html" ?>
 	<div class="xyz">
-		<h2 style="text-align: center; font-family: 'times new roman',serif; font-weight: bolder; ">CUSTOMER</h2>
-	    <h3 style="text-align: center; font-family: 'times new roman',serif; font-weight: bold;">Login</h3>
+		<h2 style="text-align: center; font-family: 'times new roman',serif; font-weight: bolder; color: black; ">CUSTOMER</h2>
+	    <h3 style="text-align: center; font-family: 'times new roman',serif; font-weight: bold; color: black;">Login</h3>
 	    <div class="container">
 	    	<p class="incorrect" style="text-align: center; color: red; font-weight: bold;"><?php echo $incorrect; ?></p>
-		<form action="clogin.php" method="post">
+		<form action="customer.php" method="post">
 			<div class="row">
-			<div class="col-25"><label for="email" style="font-size: ">Email</label></div>
+			<div class="col-25"><label for="email" >Email</label></div>
 			<div class="col-75"><input type="email" name="email" required=""></div></div>
 			<div class="row">
 				<div class="col-25"><label for="password">Password</label></div>
@@ -146,12 +153,15 @@ if(count($errors1)==0){
 				<button type="login" name="login_user">Login</button>
 			</div>
 			<div class="row">
-				<p >New User?<a href="Newaccount.php" style="color: red; font-size: 1.5em; font-style: italic;">Create Account</a></p>
+				<p  style="color: white;">New User?<a href="Newaccount.php" style="color: red; font-size: 1.5em; font-style: italic; font-weight: bold;">Create Account</a></p>
 			</div>
 		</form>
 	</div>
 	</div>
 
 </body>
+<footer>
+	<?php include "footer.html" ?>
+</footer>
 </html>
 

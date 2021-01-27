@@ -5,6 +5,11 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+
 </head>
 <style type="text/css">
     body{
@@ -81,31 +86,30 @@
         margin-top: 6em;
         text-align: justify;
         text-align: right;
-        color: white;
-        font-size: 1.2em;
+        color: bisque;
+        font-size: 1.5em;
         font-family: "vogue";
         margin-right: 2em;
     }
     .second{
         margin-top: 3em;
         text-align: justify;
-        color: white;
+        color: bisque;
         text-align: right;
-        font-size: 1.2em;
+        font-size: 1.5em;
         font-family: "vogue";
         margin-right: 2em;
     }
     
-    
 </style>
     
-<body>
+<body >
 
     <?php include 'header.html' ?>
 
     <p class="first">"ONLINE COURIER SERVICES" is a Web based Courier delivery Service  <br>which supports high availability of courier services to the customer.The  <br>website is used for sending parcels to anyone you want in your city..<br> sending gifts to them, sending food to ur loved ones, sending the urgent<br> needed stuffs and many more...</p>
 
-    <p class="second">The online platform where custmors can send or receive the couriers / <br>Parcels.It's a <span style="font-weight: bold; font-style: italic;">"DOMESTIC"</span> courier service which wil deliver to your <br>city only.Customers have to create account first to use the services lifetime. </p>
+    <p class="second">The online platform where custmors can send or receive the couriers / <br>Parcels.It's a <span style="font-weight: bold; font-style: italic; color: whitesmoke;">"DOMESTIC"</span> courier service which wil deliver to your <br>city only.Customers have to create account first to use the services lifetime. </p>
         
 </body>
 

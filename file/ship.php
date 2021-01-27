@@ -1,7 +1,13 @@
 <?php
-error_reporting(E_ALL ^ E_WARNING);
+error_reporting(E_ALL ^ E_NOTICE);
+ $db=mysqli_connect('localhost','root','rashmikeshari123','onlinecourier');
+ if($db === false){
+         die("ERROR: Could not connect. " . mysqli_connect_error());
+     }
+
 $min=50;
 $UID=$_GET['a'];
+
 ?>
 
 <!DOCTYPE html>
@@ -11,6 +17,9 @@ $UID=$_GET['a'];
 	<link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   
     <script
   src="https://code.jquery.com/jquery-3.5.1.min.js">
@@ -150,7 +159,7 @@ $UID=$_GET['a'];
 
 	 	<form action="submit1234.php?b=<?php echo $UID; ?>" method="post">
 
-			<div class="sender">
+			<div class="sender" style="margin-top: 6em; padding-top: 4em;">
 
 		    	<h2 style="font-weight: bold; font-size: 1.5em; font-family: 'times new roman',serif; text-align: center; font-variant: small-caps;text-decoration: underline overline ; color: red;">Sender Details:</h2>
 	
@@ -215,9 +224,10 @@ $UID=$_GET['a'];
 		
 			</div>
 			<div class="row">
-					<div class="col-25"><label for="email">Confirmation Email</label><span style="color: red;">*</span></div>
+				<div class="col-25"><label for="email">Confirmation email</label><span style="color: red;">*</span></div>
 					<div class="col-75"><input type="email" name="email" required="" ></div>
-				</div>
+			</div>
+			
 			<div class="Parcel" style="margin-top: 10px;">
 
 				<h2 style="font-weight: bold; font-size: 1.5em; font-family: 'times new roman',serif; text-align: center; font-variant: small-caps;text-decoration: underline overline ; color: red;">Parcel Details:</h2>

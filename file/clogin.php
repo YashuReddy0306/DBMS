@@ -1,15 +1,10 @@
 <?php
-error_reporting(E_ALL ^ E_WARNING);
-$db=mysqli_connect('localhost','root','') or die("could not connect to database");
+error_reporting(E_ALL ^ E_NOTICE);
+$db=mysqli_connect('localhost','root','rashmikeshari123') or die("could not connect to database");
 
 mysqli_select_db($db,'onlinecourier');
-
-$email=mysqli_real_escape_string($db,$_POST['email']);
-$password=mysqli_real_escape_string($db,$_POST['password']);
-
-$query=mysqli_query($db,"select * from clogin where email='$email' and password='$password'");
-
-$result=mysqli_fetch_array($query);
+$u=$_GET['a'];
+$b=$_GET['b'];
 ?>
 
 <!DOCTYPE html>
@@ -19,10 +14,13 @@ $result=mysqli_fetch_array($query);
 	<link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <style type="text/css">
 	body{
-		background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.5)), url(../img/ppp.jpg);
+		background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.8)), url(../img/ppp.jpg);
 	    background-size:  100% 100%;
 	    background-attachment: fixed;
 		background-repeat: no-repeat;
@@ -120,14 +118,14 @@ $result=mysqli_fetch_array($query);
 	<button ><a href="customer.php"><i class="fa fa-sign-out"></i>LOGOUT</a></button>
 	 <div class="heading"><h1><img src="../img/logo.png" height="80px" width="100px">XPress Delivery...</h1></div>
 <div class="container" style="float: left; margin-top: 2em;">
-	<p style="font-weight: bolder; font-family:'times new roman'; font-size: 3.7em;">Welcome!!!  <?php echo $result['name']; ?></p>
+	<p style="font-weight: bolder; font-family:'times new roman'; font-size: 3.7em;">Welcome!!! <br> <?php echo $u; ?></p>
 
 	<div class="navbar">
 			<ul  style="list-style: none;">
 				
-			<li><a href="ship.php?a=<?php echo $result['userID'];?>">Ship Parcel</a></li>
-			<li><a href="history.php?a=<?php echo $result['userID'];?>">Shippment History</a></li>
-			<li><a href="suggestion.php?a=<?php echo $result['userID'];?>">Suggestions</a></li>
+			<li><a href="ship.php?a=<?php echo $b;?>">Ship Parcel</a></li>
+			<li><a href="history.php?a=<?php echo $b;?>">Shippment History</a></li>
+			<li><a href="suggestion.php?a=<?php echo $b;?>">Suggestions</a></li>
 		</ul>
 			
 		</div>

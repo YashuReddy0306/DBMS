@@ -5,6 +5,9 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
 <style type="text/css">
@@ -17,7 +20,7 @@
 	table{
 		margin-top: 7em;
 		margin-left: 27em;
-		width: 30%;
+		width: 40%;
 		background-color: white;
 
 
@@ -28,7 +31,7 @@
 	}
 	td input{
 		text-align: center;
-		margin-left: 3em;
+		margin-left: 8em;
 		font-size: 1em;
 		padding: 1.1em;
 		border: none;
@@ -70,7 +73,7 @@
 </html>
 <?php
 
-$con=mysqli_connect("localhost","root","") or die("could not connect to database");
+$con=mysqli_connect("localhost","root","rashmikeshari123") or die("could not connect to database");
 
 mysqli_select_db($con,'onlinecourier');
 
@@ -87,15 +90,15 @@ $query=mysqli_query($con,"select * from clogin where userID='$UID'");
 				?>
 				<tr>
 					<td><input type="hidden" name="id" value="<?php echo $row['userID'];?>">
-						<label>Name: </label><input type="text" name="name" value="<?php echo $row['name'];?>">
+						<label>Name: </label><br><input type="text" name="name" value="<?php echo $row['name'];?>">
 					</td>
 				</tr>
 				<tr>
 	                <td>
-	                	<label>Email: </label><input type="text" name="email" value="<?php echo $row['email'];?>" style="margin-left: 3.1em;"></td>
+	                	<label>Email: </label><br><input type="text" name="email" value="<?php echo $row['email'];?>" ></td>
 	            </tr>
 	            <tr>
-	                <td><label>Phone:</label><input type="tel" name="phone" pattern="[0-9]{10}" value="<?php echo $row['phone'];?>"></td>
+	                <td><label>Phone:</label><br><input type="tel" name="phone" pattern="[0-9]{10}" value="<?php echo $row['phone'];?>"></td>
 	            </tr>
 	               <tr> <td ><input type="submit" name="s" value="UPDATE" style="padding-left: 4em; background-color: white; color: black; text-align: center; font-size: 1.3em;"></td></tr>
 
@@ -115,7 +118,7 @@ $query=mysqli_query($con,"select * from clogin where userID='$UID'");
  	$n=$_POST['name'];
  	$id=$_POST['id'];
 
- 	$con=mysqli_connect("localhost","root","") or die("could not connect to database");
+ 	$con=mysqli_connect("localhost","root","rashmikeshari123") or die("could not connect to database");
 
     mysqli_select_db($con,'onlinecourier');
     $result=mysqli_query($con,"update clogin set name='$n',email='$email',phone='$phone' where  userID='$id' ");

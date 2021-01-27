@@ -1,10 +1,10 @@
 <?php
 
-error_reporting(E_ALL ^ E_WARNING);
+error_reporting(E_ALL ^ E_NOTICE);
 $errors2=array();
 $error="";
 
-$db=mysqli_connect('localhost','root','','onlinecourier') or die("could not connect to database");
+$db=mysqli_connect('localhost','root','rashmikeshari123','onlinecourier') or die("could not connect to database");
 $UserID=mysqli_real_escape_string($db,$_POST['userid']);
 $name=mysqli_real_escape_string($db,$_POST['name']);
 $email=mysqli_real_escape_string($db,$_POST['email']);
@@ -54,7 +54,7 @@ if(count($errors2)==0){
 
 	mysqli_query($db,$query_run);
 	
-	header("location:clogin.php");
+	header("location:clogin.php?a=$name&b=$UserID");
 }
 
 ?>
@@ -69,6 +69,9 @@ if(count($errors2)==0){
 	<link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 </head>
 <style type="text/css">
@@ -155,7 +158,12 @@ if(count($errors2)==0){
 	    	<p class="error" style="text-align: center; color: red; font-weight: bold;"><?php echo $error; ?></p>
 		<form action="Newaccount.php" method="post">
 			<div class="row">
-			<div class="col-25"><label for="userid">Create UserID</label><span style="color: red;">*(atleast 4 character)</span></div>
+			<div class="col-25">
+				<label for="userid" style="padding-bottom: 0;margin-bottom: -30px">Create UserID</label>
+				<em>
+				<span style="color: red;font-size: 19px">*(atleast 4 character)</span>
+				</em>
+			</div>
 			<div class="col-75"><input type="text" name="userid" required=""></div></div>
 			<div class="row">
 			<div class="col-25"><label for="name">Name</label><span style="color: red;">*</span></div>

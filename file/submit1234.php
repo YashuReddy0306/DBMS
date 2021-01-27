@@ -10,7 +10,7 @@ $min=50;
 
 //{
 
-  $db=mysqli_connect('localhost','root','','onlinecourier'); 
+  $db=mysqli_connect('localhost','root','rashmikeshari123','onlinecourier'); 
 
   //or die("could not connect to database");  
 
@@ -36,7 +36,6 @@ $min=50;
 	$qty=$_REQUEST['no'];
 	$price=$weight*$min+$min;
 	$tid=uniqid("id");
-	$time=date('y-d-m h:ia');
 
 
 
@@ -52,12 +51,12 @@ $min=50;
 	//if(count($errors)==0)
 	//{
 
-	$query="INSERT INTO ship(userID,trackID,sname,saddress,sphone,rname,raddress,rphone,email,datetime,qty,weight,price) values('$UID','$tid','$name1','$address1','$phone1','$name2','$address2','$phone2','$email','$time','$qty','$weight','$price')";
+	$query="INSERT INTO ship(userID,trackID,sname,saddress,sphone,rname,raddress,rphone,email,qty,weight,price) values('$UID','$tid','$name1','$address1','$phone1','$name2','$address2','$phone2','$email','$qty','$weight','$price')";
 
-	mysqli_query($db,"INSERT INTO track(trackID,datetime,status,payment) values('$tid','$time','Pending','0')");
+	$sqli="INSERT INTO track(trackID,status,payment) values('$tid','Pending','0')";
 
 
-	if (mysqli_query($db, $query)) {
+	if (mysqli_query($db, $query) && mysqli_query($db,$sqli)) {
 
 		  header("location:billing.php?c=$UID & d=$tid");
    		
